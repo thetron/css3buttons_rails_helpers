@@ -1,0 +1,3 @@
+[submodule "lib/css3buttons/generators/css3buttons/templates/public"]
+	path = lib/css3buttons/generators/css3buttons/templates/public
+	url = git://github.com/michenriksen/css3buttons.git
