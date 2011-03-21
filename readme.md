@@ -77,7 +77,7 @@ of your method call:
 There's also a helper to automatically add the `left`, `middle` and
 `right` classes for grouped buttons.
 
-    <%= button_group |group| do %>
+    <%= button_group do |group| %>
       <%= group.link_button_to "Show", @post %>
       <%= group.link_button_to "Edit", edit_post_path(@post) %>
       <%= group.negative_trash_button_to "Delete", @post %>
