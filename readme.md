@@ -58,8 +58,13 @@ of your method call:
     <%= negative_trash_button_to "Delete", delete_path %>
     <%= positive_pill_reload_button_to "Reload", reload_path %>
 
-# Coming soon... button groups
+# Button groups
 
-To take the headaches out of managing button groups, we're currently
-working to implement a method which will accept blocks and automatically
-add the `.left`, `.middle` and `.right` classes as required.
+There's also a helper to automatically add the `left`, `middle` and
+`right` classes for grouped buttons.
+
+    <%= button_group |group| do %>
+      <%= group.link_button_to "Show", @post %>
+      <%= group.link_button_to "Edit", edit_post_path(@post) %>
+      <%= group.negative_trash_button_to "Delete", @post %>
+    <% end >
