@@ -2,8 +2,11 @@ module Css3buttons
   module Helpers
     module ButtonHelper
       def button_group(&block)
-        puts "Warning: Css3buttons::Helpers::ButtonHelper.button_group was called but this method is not yet implemented."
-      end      # add the dynamic methods for all button types
+        group = Css3buttons::ButtonGroup.new(self)
+        group.render(&block) if block_given?
+      end
+
+      # add the dynamic methods for all button types
       def self.included(base)
         qualifiers = ["", "positive", "negative", "pill", "positive_pill", "negative_pill"]
         icons = ["link", "book","calendar","chat","check","clock","cog","comment","cross","downarrow","fork","heart","home","key","leftarrow","lock","loop","magnifier","mail","move","pen","pin","plus","reload","rightarrow","rss","tag","trash","unlock","uparrow","user"]

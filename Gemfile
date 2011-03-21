@@ -6,8 +6,11 @@ gemspec
 gem 'actionpack', '>= 3.0.5'
 
 group :test do
+  #gem 'rails'
   gem 'rspec'
+  #gem 'rspec-rails'
   gem 'autotest'
   gem 'autotest-growl'
   gem 'capybara', :git => 'https://github.com/jnicklas/capybara.git'
+  gem 'webrat'
 end
