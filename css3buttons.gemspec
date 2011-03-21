@@ -6,13 +6,17 @@ Gem::Specification.new do |s|
   s.name        = "css3buttons"
   s.version     = Css3buttons::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ["Nicholas Bruning"]
+  s.email       = ["nicholas@bruning.com.au"]
+  s.homepage    = "https://github.com/thetron/css3buttons_rails_helpers"
+  s.summary     = %q{Easy, beautiful buttons, the CSS3 way.}
+  s.description = %q{Rails helper methods and generators for the css3buttons by Michael Henriksen.}
 
   s.rubyforge_project = "css3buttons"
+
+  s.add_dependency 'actionpack', '>= 3.0.5'
+
+  s.add_development_dependency 'rspec'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
