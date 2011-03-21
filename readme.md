@@ -33,7 +33,7 @@ upgrading and downgrading to css3buttons should be a snap.
 
 # Icons and pills and colours, oh my!
 
-The gem will create a stack of dynamic helpers, to assist in adding
+The gem also creates a huge stack of dynamic helpers, to assist in adding
 icons, colours and styles to your buttons.
 
 ## Icons
