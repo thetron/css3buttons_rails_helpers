@@ -86,9 +86,9 @@ There's also a helper to automatically add the `left`, `middle` and
 # What's missing?
 
 There's a couple of things I've noticed are still missing from the gem,
-namely the `big` and `primary` options. Which I will add very soon, for
+namely the `big` and `primary` options - which I will add very soon, for
 the next release.
 
-The button group helpers need some proper tests, if anyone can point me
-as to how to stub out a template in RSpec, that would be much
+The `button_group` helper needs some proper tests, if anyone can point me
+as to how to stub out a rails request template in RSpec, that would be much
 appreciated!
