@@ -1,3 +1,6 @@
 module Css3buttons
-  # Your code goes here...
+  module Helpers
+    autoload :ButtonHelper, 'css3buttons/helpers/button_helper'
+  end
+  ActionController::Base.helper(Css3buttons::Helpers::ButtonHelper)
 end
