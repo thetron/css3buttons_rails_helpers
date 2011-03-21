@@ -28,7 +28,7 @@ For example:
     <%= link_button_to "Search", search_path %>
 
 The helper method accept all the same parameters as `link_to` to
-upgrading and downgrading to css3buttons should be a snap.
+upgrading and downgrading so css3buttons should be a snap.
 
 
 # Icons and pills and colours, oh my!
