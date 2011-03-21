@@ -20,6 +20,20 @@ Run the generators
 Which will copy the stylesheets and icon/button images into your public
 directory.
 
+In your layout, add the following:
+
+    <%= css3buttons_stylesheets %>
+
+Which will add both the `reset.css` and the `css3buttons.css` stylesheet
+link tags. 
+
+_Please note_ since this helper includes the css3buttons
+reset stylesheet, it's advisable to place this helper before all your
+other stylsheet declarations. However, if you'd like to use your own
+reset, you can skip it with:
+
+    <%= css3buttons_stylesheets :include_reset => false %>
+
 # The basics
 
 To change your `link_to` calls to buttons, simply use `link_button_to`.

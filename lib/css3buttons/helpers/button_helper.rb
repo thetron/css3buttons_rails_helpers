@@ -1,6 +1,16 @@
 module Css3buttons
   module Helpers
     module ButtonHelper
+
+      def css3buttons_stylesheets(options = {})
+        options[:include_reset] = true unless options.has_key?(:include_reset)
+        if options[:include_reset] == true
+          stylesheet_link_tag "css3buttons/reset", "css3buttons/css3buttons"
+        else
+          stylesheet_link_tag "css3buttons/css3buttons"
+        end
+      end
+
       def button_group(&block)
         group = Css3buttons::ButtonGroup.new(self)
         group.render(&block) if block_given?
