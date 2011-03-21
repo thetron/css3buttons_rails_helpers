@@ -57,3 +57,9 @@ of your method call:
 
     <%= negative_trash_button_to "Delete", delete_path %>
     <%= positive_pill_reload_button_to "Reload", reload_path %>
+
+# Coming soon... button groups
+
+To take the headaches out of managing button groups, we're currently
+working to implement a method which will accept blocks and automatically
+add the `.left`, `.middle` and `.right` classes as required.
