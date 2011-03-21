@@ -15,7 +15,7 @@ Include the gem in your gemfile:
 
 Run the generators
 
-    $ rails g css3buttons:stylesheets
+    $ rails g css3buttons
 
 Which will copy the stylesheets and icon/button images into your public
 directory.
