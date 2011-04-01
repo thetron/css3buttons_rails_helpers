@@ -54,6 +54,13 @@ module Css3buttons
         group.render(&block) if block_given?
       end
 
+      def minor_button_group(*args, &block)
+        options = args.extract_options!
+        options[:minor] = true
+        group = Css3buttons::ButtonGroup.new(self, options)
+        group.render(&block) if block_given?
+      end
+
       protected
       def add_classes_to_html_options(classes, html_options = {})
         classes = classes.delete_if{|c| c.blank?}

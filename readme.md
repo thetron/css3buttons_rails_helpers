@@ -108,6 +108,11 @@ Button groups are snap, you just need to wrar your buttons with
 sure? %>
     <% end %>
 
+And, of course, minor groups:
+
+    <%= minor_button_group => true do %>
+      You know the drill by now.
+    <% end %>
 
 ## Other stuff
 
