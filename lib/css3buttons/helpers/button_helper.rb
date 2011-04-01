@@ -1,6 +1,37 @@
 module Css3buttons
   module Helpers
     module ButtonHelper
+      def method_missing(method, *args)
+        if method.to_s.index("button_link_to") || method.to_s.index("button_submit_tag")
+          qualifiers = ["primary", "big", "positive", "negative", "pill", "danger", "safe", "button"]
+          color_map = {"positive" => "safe", "negative" => "danger"}
+
+          method_qualifiers = method.to_s.split("_")[0...-3] + ["button"]
+          method_qualifiers.map! do |qualifier|
+            if color_map.has_key?(qualifier)
+              qualifier = color_map[qualifier]
+            end
+            if qualifiers.index(qualifier).nil?
+              qualifier = [qualifier, "icon"]
+            end
+            qualifier
+          end.flatten!
+
+          if block_given?
+            link = args.first
+            options = args.extract_options!
+            link_to(link, options, &Proc.new)
+          else
+            label = args.first
+            link = args[1]
+            options = args.extract_options!
+            options = add_classes_to_html_options(method_qualifiers, options)
+            link_to(label, link, options)
+          end
+        else
+          super
+        end
+      end
 
       def css3buttons_stylesheets(options = {})
         options[:include_reset] = true unless options.has_key?(:include_reset)
@@ -14,32 +45,6 @@ module Css3buttons
       def button_group(&block)
         group = Css3buttons::ButtonGroup.new(self)
         group.render(&block) if block_given?
-      end
-
-      # add the dynamic methods for all button types
-      def self.included(base)
-        qualifiers = ["", "positive", "negative", "pill", "positive_pill", "negative_pill"]
-        icons = ["link", "book","calendar","chat","check","clock","cog","comment","cross","downarrow","fork","heart","home","key","leftarrow","lock","loop","magnifier","mail","move","pen","pin","plus","reload","rightarrow","rss","tag","trash","unlock","uparrow","user"]
-        qualifiers.each do |qualifier|
-          icons.each do |icon|
-            method_name = (qualifier.split("_") + [icon, "button", "to"]).join("_")
-            define_method(:"#{method_name}") do |*args, &block|
-              icon_tag = (icon != icons.first) ? content_tag(:span, "", :class => "icon #{icon}") : ""
-              if block_given?
-                options      = args.first || {}
-                html_options = args.second
-                html_options = add_classes_to_html_options [qualifier.split("_"), 'button'], html_options
-                link_to(icon_tag + capture(&block).html_safe, options, html_options)
-              else
-                name         = args[0]
-                options      = args[1] || {}
-                html_options = args[2] || {}
-                html_options = add_classes_to_html_options [qualifier.split("_"), 'button'], html_options
-                link_to(icon_tag + name.html_safe, options, html_options)
-              end
-            end
-          end
-        end
       end
 
       protected
