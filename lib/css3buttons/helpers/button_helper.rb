@@ -17,12 +17,6 @@ module Css3buttons
             qualifier
           end.flatten!
 
-          if method.to_s.index("button_link_to")
-            generate_button_link_to()
-          else
-            generate_button_submit_tag()
-          end
-
           if block_given?
             link = args.first
             options = args.extract_options!
@@ -69,15 +63,6 @@ module Css3buttons
         html_options[:class] = (html_options[:class].split(" ") + classes).join(" ")
         html_options
       end
-
-      def generate_button_link_to()
-
-      end
-
-      def generate_button_submit_tag()
-
-      end
-
     end
   end
 end

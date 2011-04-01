@@ -16,8 +16,9 @@ module Css3buttons
       html_options.delete(:minor)
       html_options[:class] ||= ''
       html_options[:class] = (html_options[:class].split(" ") + ['button-group']).join(" ")
-      html_options[:class] = (html_options[:class].split(" ") + ['minor-group']).join(" ")
+      html_options[:class] = (html_options[:class].split(" ") + ['minor-group']).join(" ") if @options[:minor]
       content_tag(:div, @template.capture(&block), html_options) if block_given?
     end
   end
 end
+
