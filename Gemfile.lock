@@ -13,8 +13,8 @@ GIT
 PATH
   remote: .
   specs:
-    css3buttons (0.7.0)
-      actionpack (>= 3.0.5)
+    css3buttons (0.9.2)
+      actionpack (>= 3.0.0)
 
 GEM
   remote: http://rubygems.org/
@@ -83,7 +83,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionpack (>= 3.0.5)
+  actionpack (>= 3.0.0)
   autotest
   autotest-growl
   capybara!

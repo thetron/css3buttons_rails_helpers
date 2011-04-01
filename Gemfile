@@ -3,7 +3,7 @@ source "http://rubygems.org"
 # Specify your gem's dependencies in css3buttons.gemspec
 gemspec
 
-gem 'actionpack', '>= 3.0.5'
+gem 'actionpack', '>= 3.0.0'
 
 group :test do
   #gem 'rails'
