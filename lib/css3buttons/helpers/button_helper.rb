@@ -36,9 +36,9 @@ module Css3buttons
       def css3buttons_stylesheets(options = {})
         options[:include_reset] = true unless options.has_key?(:include_reset)
         if options[:include_reset] == true
-          stylesheet_link_tag "css3buttons/reset", "css3buttons/css3buttons"
+          stylesheet_link_tag "css3buttons/reset", "css3buttons/css3-github-buttons"
         else
-          stylesheet_link_tag "css3buttons/css3buttons"
+          stylesheet_link_tag "css3buttons/css3-github-buttons"
         end
       end
 
