@@ -42,8 +42,9 @@ module Css3buttons
         end
       end
 
-      def button_group(&block)
-        group = Css3buttons::ButtonGroup.new(self)
+      def button_group(*args, &block)
+        options = args.extract_options!
+        group = Css3buttons::ButtonGroup.new(self, options)
         group.render(&block) if block_given?
       end
 
