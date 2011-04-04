@@ -1,6 +1,8 @@
 module Css3buttons
   module Helpers
     module ButtonHelper
+      include ActionView::Helpers::UrlHelper
+      include ActionView::Helpers::FormTagHelper
       def method_missing(method, *args)
         if method.to_s.index("button_link_to") || method.to_s.index("button_submit_tag")
           qualifiers = ["primary", "big", "positive", "negative", "pill", "danger", "safe", "button"]
@@ -17,7 +19,7 @@ module Css3buttons
             qualifier
           end.flatten!
 
-          if block_given?
+          if is_link_method?(method) && block_given?
             link = args.first
             options = args.extract_options!
             link_to(link, options, &Proc.new)
@@ -26,7 +28,12 @@ module Css3buttons
             link = args[1]
             options = args.extract_options!
             options = add_classes_to_html_options(method_qualifiers, options)
-            link_to(label, link, options)
+
+            if is_link_method?(method)
+              link_to(label, link, options)
+            else
+              submit_tag(label, options)
+            end
           end
         else
           super
@@ -62,6 +69,10 @@ module Css3buttons
         html_options[:class] ||= ""
         html_options[:class] = (html_options[:class].split(" ") + classes).join(" ")
         html_options
+      end
+
+      def is_link_method?(method)
+        method.to_s.index("button_link_to")
       end
     end
   end

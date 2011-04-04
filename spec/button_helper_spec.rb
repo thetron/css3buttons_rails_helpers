@@ -19,12 +19,22 @@ describe Css3buttons::Helpers::ButtonHelper do
     end
   end
 
+  it "should create basic submit buttons" do
+    button = html(button_submit_tag(@label))
+    
+    button.should have_selector("input.button[type='submit']")
+    @qualifiers.each do |qualifier|
+      button.should_not have_selector("input.#{qualifier}")
+    end
+  end
+
   it "should create basic buttons with valid icons" do
     @icons.each do |icon|
       link = html(send(:"#{icon}_button_link_to", @label, @path))
       link.should have_selector("a.button.icon.#{icon}[href='#{@path}']")
     end
   end
+  
   it "should create positive buttons" do
     link = html(positive_button_link_to(@label, @path))
     link.should have_selector("a.button.safe[href='#{@path}']")
@@ -33,11 +43,27 @@ describe Css3buttons::Helpers::ButtonHelper do
     end
   end
 
+  it "should create positive submit buttons" do
+    button = html(positive_button_submit_tag(@label))
+    button.should have_selector("input.button.safe[type='submit']")
+    @qualifiers.each do |qualifier|
+      button.should_not have_selector("input.#{qualifier}") unless qualifier == "safe"
+    end
+  end
+
   it "should create negative buttons" do
     link = html(negative_button_link_to(@label, @path))
     link.should have_selector("a.button.danger[href='#{@path}']")
     @qualifiers.each do |qualifier|
       link.should_not have_selector("a.#{qualifier}") unless qualifier == "danger"
+    end
+  end
+
+  it "should create positive submit buttons" do
+    button = html(negative_button_submit_tag(@label))
+    button.should have_selector("input.button.danger[type='submit']")
+    @qualifiers.each do |qualifier|
+      button.should_not have_selector("a.#{qualifier}") unless qualifier == "danger"
     end
   end
 
@@ -69,6 +95,14 @@ describe Css3buttons::Helpers::ButtonHelper do
     end
   end
 
+  it "should create pill submit buttons" do
+    button = html(pill_button_submit_tag(@label))
+    button.should have_selector("input.button.pill[type='submit']")
+    @qualifiers.each do |qualifier|
+      button.should_not have_selector("input.#{qualifier}") unless qualifier == "pill"
+    end
+  end
+
   it "should create pill buttons with valid icons" do
     @icons.each do |icon|
       link = html(send(:"pill_#{icon}_button_link_to", @label, @path))
@@ -85,10 +119,22 @@ describe Css3buttons::Helpers::ButtonHelper do
     link.should_not have_selector("a.danger")
   end
 
+  it "should create positive pill submit buttons" do
+    button = html(positive_pill_button_submit_tag(@label))
+    button.should have_selector("input.button.pill.safe[type='submit']")
+    button.should_not have_selector("input.danger")
+  end
+
   it "should create negative pill buttons" do
     link = html(negative_pill_button_link_to(@label, @path))
     link.should have_selector("a.button.pill.danger[href='#{@path}']")
     link.should_not have_selector("a.safe")
+  end
+
+  it "should create negative pill submit buttons" do
+    button = html(negative_pill_button_submit_tag(@label))
+    button.should have_selector("input.button.pill.danger[type='submit']")
+    button.should_not have_selector("input.safe")
   end
 
   it "should create positive pill buttons with valid icons" do
