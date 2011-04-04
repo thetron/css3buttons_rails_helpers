@@ -1,7 +1,7 @@
 # css3buttons gem - helper methods for css3buttons
 
 The css3buttons gem is a small set of helper methods designed to work in
-conjunction with the __amazing__ [css3 github buttons by Nicolas Gallagher](http://nicolasgallagher.com/lab/css3-github-buttons/) - a slight reworking of the awesome [css3buttons by Michael Henriksen](http://css3buttons.michaelhenriksen.dk).
+conjunction with the __amazing__ [css3 github buttons by Nicolas Gallagher](http://nicolasgallagher.com/lab/css3-github-buttons/).
 
 The helpers allow rails developers to quickly and easily leverage this
 fantastic CSS library - without cluttering up your views and calls to
@@ -9,9 +9,9 @@ fantastic CSS library - without cluttering up your views and calls to
 
 # What's new in version this version?
 
-In this version we've updated the css to now work with the [css3 github
-buttons](http://nicolasgallagher.com/lab/css3-github-buttons/) as standard, as well as a serious re-tooling of the helper
-methods to make them more usable, more dynamic and less prone to error.
+In this version we've updated the css to now work with the [css3 github buttons](http://nicolasgallagher.com/lab/css3-github-buttons/) as standard, instead of the original css3buttons, to take advantage of a few of the features not included in the original library.
+
+Additionally, there was some serious re-tooling of the helper methods to make them more usable, more dynamic and less prone to error.
 
 __Please note__: as part of changes, calls to `link_button_to` will need
 to be updated to `button_link_to`. Everything else should work expected.
