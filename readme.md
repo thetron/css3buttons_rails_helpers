@@ -7,15 +7,14 @@ The helpers allow rails developers to quickly and easily leverage this
 fantastic CSS library - without cluttering up your views and calls to
 `link_to`, `button_to` and `submit_tag`.
 
-# What's new in version 0.9.2?
+# What's new in version this version?
 
 In this version we've updated the css to now work with the [css3 github
 buttons](http://nicolasgallagher.com/lab/css3-github-buttons/) as standard, as well as a serious re-tooling of the helper
 methods to make them more usable, more dynamic and less prone to error.
 
 __Please note__: as part of changes, calls to `link_button_to` will need
-to be updated to `button_link_to`. Everything else should work as
-originally did.
+to be updated to `button_link_to`. Everything else should work expected.
 
 
 # Getting started
@@ -80,32 +79,27 @@ Just like the icons, you can add options for `primary`, `big` and
 
     <%= primary_button_link_to "Home", root_path %>
     <%= pill_button_link_to "Archive", archive_path %>
-    <%= big_primary_pill_button_link_to "Super Important!",
-super_important_path %>
+    <%= big_primary_pill_button_link_to "Super Important!", super_important_path %>
 
 
 ## Colors
 
-Again with colors - simply add `positive` or `negative` to the front
-of your method call:
+Again with colors - simply add `positive` or `negative` to the front of your method call:
 
     <%= negative_trash_button_to "Delete", delete_path %>
     <%= positive_pill_reload_button_to "Reload", reload_path %>
 
-In order to be compatible with the new css3 github buttons library, you
-are also able to use `safe` and `danger` - as an alternative.
+In order to be compatible with the new css3 github buttons library, you are also able to use `safe` and `danger` - as an alternative.
 
 
 ## Button groups
 
-Button groups are snap, you just need to wrar your buttons with
-`button_group`, like so:
+Button groups are snap, you just need to wrap your buttons with `button_group`, like so:
 
     <%= button_group do %>
       <%= link_button_to "Show", @post %>
       <%= link_button_to "Edit", edit_post_path(@post) %>
-      <%= negative_trash_button_to "Delete", @post, :confirm => "Are you
-sure? %>
+      <%= negative_trash_button_to "Delete", @post, :confirm => "Are you sure? %>
     <% end %>
 
 And, of course, minor groups:
@@ -116,15 +110,7 @@ And, of course, minor groups:
 
 ## Other stuff
 
-Version 0.9.3 now also supports the `<button>` tag, for those so
-inclined. To do so, pass in `:as => :button` as an option to your
-method:
-
-    <%= link_button_to "Click me", "#", :as => :button %>
-
-Submit tags are also ushered in with this version. Everything works as
-it does above, except instead of `button_link_to` it's
-`button_submit_tag`. Example:
+Submit tags are also ushered in with this version. Everything works as it does above, except instead of `button_link_to` it's `button_submit_tag`. Example:
 
     <%= positive_button_submit_tag "Publish" %>
 
@@ -134,5 +120,7 @@ it does above, except instead of `button_link_to` it's
 The `button_group` helper needs some proper tests, if anyone can point me
 as to how to stub out a rails request template in RSpec, that would be much
 appreciated!
+
+I've noticed that this version of the css3 github buttons does not include any colours for the positive/safe styles - so this will appear as normal buttons, unless you add your own styling.
 
 Forks and pull requests are always welcome.
