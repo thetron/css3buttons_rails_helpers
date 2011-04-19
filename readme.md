@@ -104,7 +104,7 @@ Button groups are snap, you just need to wrap your buttons with `button_group`, 
 
 And, of course, minor groups:
 
-    <%= minor_button_group => true do %>
+    <%= minor_button_group do %>
       You know the drill by now.
     <% end %>
 
