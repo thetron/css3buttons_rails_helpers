@@ -23,7 +23,7 @@ Include the gem in your gemfile:
 
     gem 'css3buttons'
 
-Run the generators
+Run the generators:
 
     $ rails g css3buttons
 
@@ -52,8 +52,8 @@ For example:
 
     <%= button_link_to "Search", search_path %>
 
-The helper method accept all the same parameters as `link_to` so
-upgrading and downgrading so css3buttons should be a snap.
+The helper methods accept all the same parameters as `link_to` so
+upgrading and downgrading to css3buttons should be a snap.
 
 
 # Icons and pills and colours, oh my!
@@ -86,10 +86,10 @@ Just like the icons, you can add options for `primary`, `big` and
 
 Again with colors - simply add `positive` or `negative` to the front of your method call:
 
-    <%= negative_trash_button_to "Delete", delete_path %>
-    <%= positive_pill_reload_button_to "Reload", reload_path %>
+    <%= negative_trash_button_link_to "Delete", delete_path %>
+    <%= positive_pill_reload_button_link_to "Reload", reload_path %>
 
-In order to be compatible with the new css3 github buttons library, you are also able to use `safe` and `danger` - as an alternative.
+In order to be compatible with the new css3 github buttons library, you can also use `danger` and `safe` - as alternatives.
 
 
 ## Button groups
@@ -97,9 +97,9 @@ In order to be compatible with the new css3 github buttons library, you are also
 Button groups are snap, you just need to wrap your buttons with `button_group`, like so:
 
     <%= button_group do %>
-      <%= link_button_to "Show", @post %>
-      <%= link_button_to "Edit", edit_post_path(@post) %>
-      <%= negative_trash_button_to "Delete", @post, :confirm => "Are you sure? %>
+      <%= button_link_to "Show", @post %>
+      <%= button_link_to "Edit", edit_post_path(@post) %>
+      <%= negative_trash_button_link_to "Delete", @post, :confirm => "Are you sure? %>
     <% end %>
 
 And, of course, minor groups:
@@ -117,9 +117,7 @@ Submit tags are also ushered in with this version. Everything works as it does a
 
 # What's missing?
 
-The `button_group` helper needs some proper tests, if anyone can point me
-as to how to stub out a rails request template in RSpec, that would be much
-appreciated!
+The `button_group` helper needs some proper tests, if anyone can point me as to how to stub out a rails request template in RSpec (or the right way to approach this test at all), that would be much appreciated!
 
 I've noticed that this version of the css3 github buttons does not include any colours for the positive/safe styles - so this will appear as normal buttons, unless you add your own styling.
 
