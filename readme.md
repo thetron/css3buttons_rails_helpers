@@ -9,7 +9,7 @@ fantastic CSS library - without cluttering up your views and calls to
 
 # What's new in version this version?
 
-In this version we've updated the css to now work with the [css3 github buttons](http://nicolasgallagher.com/lab/css3-github-buttons/) as standard, instead of the original css3buttons, to take advantage of a few of the features not included in the original library.
+In this version we've updated the css to now work with the [css3 github buttons](http://nicolasgallagher.com/lab/css3-github-buttons/) as standard, instead of the original css3buttons, in order to take advantage of a few of the features not included in the original library.
 
 Additionally, there was some serious re-tooling of the helper methods to make them more usable, more dynamic and less prone to error.
 
