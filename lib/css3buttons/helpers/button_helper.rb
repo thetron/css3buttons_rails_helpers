@@ -3,6 +3,7 @@ module Css3buttons
     module ButtonHelper
       include ActionView::Helpers::UrlHelper
       include ActionView::Helpers::FormTagHelper
+      include ActionView::Helpers::TagHelper
       def method_missing(method, *args)
         if method.to_s.index("button_link_to") || method.to_s.index("button_submit_tag")
           qualifiers = ["primary", "big", "positive", "negative", "pill", "danger", "safe", "button"]
@@ -32,7 +33,7 @@ module Css3buttons
             if is_link_method?(method)
               link_to(label, link, options)
             else
-              submit_tag(label, options)
+              content_tag :button, label, { "type" => "submit", "name" => "commit", "value" => "commit" }.update(options.stringify_keys)
             end
           end
         else

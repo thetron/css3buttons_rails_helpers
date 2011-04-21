@@ -22,7 +22,7 @@ describe Css3buttons::Helpers::ButtonHelper do
   it "should create basic submit buttons" do
     button = html(button_submit_tag(@label))
     
-    button.should have_selector("input.button[type='submit']")
+    button.should have_selector("button.button[type='submit']")
     @qualifiers.each do |qualifier|
       button.should_not have_selector("input.#{qualifier}")
     end
@@ -45,7 +45,7 @@ describe Css3buttons::Helpers::ButtonHelper do
 
   it "should create positive submit buttons" do
     button = html(positive_button_submit_tag(@label))
-    button.should have_selector("input.button.safe[type='submit']")
+    button.should have_selector("button.button.safe[type='submit']")
     @qualifiers.each do |qualifier|
       button.should_not have_selector("input.#{qualifier}") unless qualifier == "safe"
     end
@@ -61,7 +61,7 @@ describe Css3buttons::Helpers::ButtonHelper do
 
   it "should create positive submit buttons" do
     button = html(negative_button_submit_tag(@label))
-    button.should have_selector("input.button.danger[type='submit']")
+    button.should have_selector("button.button.danger[type='submit']")
     @qualifiers.each do |qualifier|
       button.should_not have_selector("a.#{qualifier}") unless qualifier == "danger"
     end
@@ -97,7 +97,7 @@ describe Css3buttons::Helpers::ButtonHelper do
 
   it "should create pill submit buttons" do
     button = html(pill_button_submit_tag(@label))
-    button.should have_selector("input.button.pill[type='submit']")
+    button.should have_selector("button.button.pill[type='submit']")
     @qualifiers.each do |qualifier|
       button.should_not have_selector("input.#{qualifier}") unless qualifier == "pill"
     end
@@ -121,7 +121,7 @@ describe Css3buttons::Helpers::ButtonHelper do
 
   it "should create positive pill submit buttons" do
     button = html(positive_pill_button_submit_tag(@label))
-    button.should have_selector("input.button.pill.safe[type='submit']")
+    button.should have_selector("button.button.pill.safe[type='submit']")
     button.should_not have_selector("input.danger")
   end
 
@@ -133,7 +133,7 @@ describe Css3buttons::Helpers::ButtonHelper do
 
   it "should create negative pill submit buttons" do
     button = html(negative_pill_button_submit_tag(@label))
-    button.should have_selector("input.button.pill.danger[type='submit']")
+    button.should have_selector("button.button.pill.danger[type='submit']")
     button.should_not have_selector("input.safe")
   end
 

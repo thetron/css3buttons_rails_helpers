@@ -1,5 +1,7 @@
 # css3buttons gem - helper methods for css3buttons
 
+This fork: Use button tag for button_submit_tag, so that icons are used.
+
 The css3buttons gem is a small set of helper methods designed to work in
 conjunction with the __amazing__ [css3 github buttons by Nicolas Gallagher](http://nicolasgallagher.com/lab/css3-github-buttons/).
 
