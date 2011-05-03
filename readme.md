@@ -130,15 +130,15 @@ way the built-in formtastic styles modify default form buttons. In this
 instance, you can insert the following into your
 `formtastic_changes.css` stylesheet.
 
-  form.formtastic input.button {
-    height: 25px;
-    padding: 0.2em 1em 0.2em 2.5em;
-    font-family: sans-serif;
-    font-size: 11px;
-    margin-left: 5px;
-  }
+    form.formtastic input.button, form.formtastic.button.button {
+      height: 25px;
+      padding: 0.2em 1em 0.2em 2.5em;
+      font-family: sans-serif;
+      font-size: 11px;
+      margin-left: 5px;
+    }
 
-CSS Snippit courtesy of [vitobotta](https://github.com/vitobotta).
+CSS Snippet courtesy of [vitobotta](https://github.com/vitobotta).
 
 
 
