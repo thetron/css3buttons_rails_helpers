@@ -4,11 +4,11 @@ module Css3buttons
       include ActionView::Helpers::UrlHelper
       include ActionView::Helpers::FormTagHelper
       def method_missing(method, *args)
-        if method.to_s.index("button_link_to") || method.to_s.index("button_submit_tag")
+        if is_link_method?(method) || is_submit_method?(method) || is_button_method?(method)
           qualifiers = ["primary", "big", "positive", "negative", "pill", "danger", "safe", "button"]
           color_map = {"positive" => "safe", "negative" => "danger"}
 
-          method_qualifiers = method.to_s.split("_")[0...-3] + ["button"]
+          method_qualifiers = strip_method_name(method).split("_") + ["button"]
           method_qualifiers.map! do |qualifier|
             if color_map.has_key?(qualifier)
               qualifier = color_map[qualifier]
@@ -31,6 +31,8 @@ module Css3buttons
 
             if is_link_method?(method)
               link_to(label, link, options)
+            elsif is_button_method?(method)
+              content_tag :button, label, { "type" => "submit", "name" => "commit", "value" => "commit" }.merge(options.stringify_keys)
             else
               submit_tag(label, options)
             end
@@ -73,6 +75,18 @@ module Css3buttons
 
       def is_link_method?(method)
         method.to_s.index("button_link_to")
+      end
+
+      def is_button_method?(method)
+        method.to_s.index("button_tag")
+      end
+
+      def is_submit_method?(method)
+        method.to_s.index("button_submit_tag")
+      end
+
+      def strip_method_name(method)
+        method.to_s.gsub("button_link_to", "").gsub("button_tag", "").gsub("button_submit_tag", "")
       end
     end
   end
