@@ -121,6 +121,27 @@ Keep in mind however, that icons do not work on `<submit>` tags. If you're wanti
     <%= negative_trash_button_tag "Deactivate account" %>
 
 
+# Formtastic compatibility
+
+If you're using
+[formtastic](https://github.com/justinfrench/formtastic), you may
+experience issues with using css3buttons in your forms, because of the
+way the built-in formtastic styles modify default form buttons. In this
+instance, you can insert the following into your
+`formtastic_changes.css` stylesheet.
+
+  form.formtastic input.button {
+    height: 25px;
+    padding: 0.2em 1em 0.2em 2.5em;
+    font-family: sans-serif;
+    font-size: 11px;
+    margin-left: 5px;
+  }
+
+CSS Snippit courtesy of [vitobotta](https://github.com/vitobotta).
+
+
+
 # What's missing?
 
 The `button_group` helper needs some proper tests, if anyone can point me as to how to stub out a rails request template in RSpec (or the right way to approach this test at all), that would be much appreciated!
