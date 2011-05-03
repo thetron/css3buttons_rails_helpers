@@ -125,7 +125,7 @@ Keep in mind however, that icons do not work on `<submit>` tags. If you're wanti
 
 If you're using
 [formtastic](https://github.com/justinfrench/formtastic), you may
-experience issues with using css3buttons in your forms, because of the
+experience issues with using css3buttons in your forms, due to the
 way the built-in formtastic styles modify default form buttons. In this
 instance, you can insert the following into your
 `formtastic_changes.css` stylesheet.
