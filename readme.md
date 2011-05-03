@@ -108,11 +108,17 @@ And, of course, minor groups:
       You know the drill by now.
     <% end %>
 
-## Other stuff
 
-Submit tags are also ushered in with this version. Everything works as it does above, except instead of `button_link_to` it's `button_submit_tag`. Example:
+## Submit tags, button tags and using icons on form buttons
+
+Submit tags were ushered in with version 0.9.2. Everything works as it does above, except instead of `button_link_to` it's `button_submit_tag`. Example:
 
     <%= positive_button_submit_tag "Publish" %>
+
+Keep in mind however, that icons do not work on `<submit>` tags. If you're wanting to include icons in your forms there is also a helper method to insert `<button>` tags instead. The method suffix in this case is `button_tag`. Examples:
+
+    <%= approve_button_tag "Update profile" %>
+    <%= negative_trash_button_tag "Deactivate account" %>
 
 
 # What's missing?
