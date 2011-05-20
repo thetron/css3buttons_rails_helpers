@@ -3,16 +3,16 @@ $:.push File.expand_path("../lib", __FILE__)
 require "css3buttons/version"
 
 Gem::Specification.new do |s|
-  s.name        = "css3buttons"
+  s.name        = "css3buttons-rails"
   s.version     = Css3buttons::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Nicholas Bruning"]
-  s.email       = ["nicholas@bruning.com.au"]
-  s.homepage    = "https://github.com/thetron/css3buttons_rails_helpers"
+  s.authors     = ["Nicholas Bruning", "Florian Günther"]
+  s.email       = ["nicholas@bruning.com.au", "mail@gee-f.de"]
+  s.homepage    = "https://github.com/florianguenther/css3buttons-rails"
   s.summary     = %q{Easy, beautiful buttons, the CSS3 way.}
-  s.description = %q{Rails helper methods and generators for the css3buttons by Michael Henriksen.}
+  s.description = %q{Rails3.1+ helper methods for the css3buttons by Michael Henriksen.}
 
-  s.rubyforge_project = "css3buttons"
+  # s.rubyforge_project = "css3buttons"
 
   s.add_dependency 'actionpack', '>= 3.0.0'
 
