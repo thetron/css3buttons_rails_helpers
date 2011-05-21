@@ -19,11 +19,11 @@ __Please note__: as part of changes, calls to `link_button_to` will need
 to be updated to `button_link_to`. Everything else should work expected.
 
 
-# Getting started
+# Getting started (Rails3.1+)
 
 Include the gem in your gemfile and rum *bundle*
 
-    gem 'css3buttons-rails'
+    gem 'css3buttons'
 
 Require the assets (stylesheets) in your *app/asstes/stylesheets/application.css*
 
@@ -36,6 +36,33 @@ You should require the css3buttons stylesheet before any other styles because it
 	*= require css3buttons/without-reset
 	*= require_self
 	...
+
+# Getting started (< Rails3.1)
+
+Include the gem in your gemfile:
+
+    gem 'css3buttons'
+
+Run the generators:
+
+    $ rails g css3buttons
+
+Which will copy the stylesheets and icon/button images into your public
+directory.
+
+In your layout, add the following:
+
+    <%= css3buttons_stylesheets %>
+
+Which will add both the `reset.css` and the `css3buttons.css` stylesheet
+link tags. 
+
+_Please note_ since this helper includes the css3buttons
+reset stylesheet, it's advisable to place this helper before all your
+other stylsheet declarations. However, if you'd like to use your own
+reset, you can skip it with:
+
+    <%= css3buttons_stylesheets :include_reset => false %>
 
 
 # The basics
