@@ -13,7 +13,7 @@ GIT
 PATH
   remote: .
   specs:
-    css3buttons (0.9.4)
+    css3buttons (0.9.5)
       actionpack (>= 3.0.0)
 
 GEM
