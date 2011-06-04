@@ -9,6 +9,14 @@ fantastic CSS library - without cluttering up your views and calls to
 
 # What's new in version this version?
 
+## 0.9.5
+
+Not a whole lot, mainly just fixes for bad paths in the CSS that crept
+through in the last update. As well as prepping for version 1.0.0 with
+will be compaitible with the Rails 3.1 asset pipeline.
+
+## 0.9.4
+
 In this version we've updated the css to now work with the [css3 github buttons](http://nicolasgallagher.com/lab/css3-github-buttons/) as standard, instead of the original css3buttons, in order to take advantage of a few of the features not included in the original library.
 
 Additionally, there was some serious re-tooling of the helper methods to make them more usable, more dynamic and less prone to error.
