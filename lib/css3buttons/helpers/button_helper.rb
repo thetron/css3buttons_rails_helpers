@@ -63,6 +63,12 @@ module Css3buttons
         group = Css3buttons::ButtonGroup.new(self, options)
         group.render(&block) if block_given?
       end
+      
+      def split_button_group(*args, &block)
+        options = args.extract_options!
+        group = Css3buttons::SplitButtonGroup.new(self, options)
+        group.render(&block) if block_given?
+      end
 
       protected
       def add_classes_to_html_options(classes, html_options = {})

@@ -6,5 +6,6 @@ module Css3buttons
     autoload :ButtonHelper, 'css3buttons/helpers/button_helper'
   end
   autoload :ButtonGroup, 'css3buttons/button_group'
+  autoload :SplitButtonGroup, 'css3buttons/split_button_group'
   ActionController::Base.helper(Css3buttons::Helpers::ButtonHelper)
 end
