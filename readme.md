@@ -9,11 +9,18 @@ fantastic CSS library - without cluttering up your views and calls to
 
 # What's new in version this version?
 
+## 0.9.6
+
+Added ability to render a block of buttons as a split button and styled 
+so the first button will remain displayed while the remaining buttons
+will be displayed in a drop down. Also added a new dropdown icon and css
+classes to display
+
 ## 0.9.5
 
 Not a whole lot, mainly just fixes for bad paths in the CSS that crept
 through in the last update. As well as prepping for version 1.0.0 with
-will be compaitible with the Rails 3.1 asset pipeline.
+will be compatible with the Rails 3.1 asset pipeline.
 
 ## 0.9.4
 
@@ -114,6 +121,25 @@ And, of course, minor groups:
 
     <%= minor_button_group do %>
       You know the drill by now.
+    <% end %>
+
+
+## Split Buttons (Button groups)
+
+Split Buttons (no javascript!), similar to Button Groups, are extremely easy to create by using a `split_button_group`, like so:
+  
+    <%= split_button_group do %>
+      <%= primary_add_button_link_to "New Post", @post %>
+      <%= button_link_to "Edit", edit_post_path(@post) %>
+      <%= negative_trash_button_link_to "Delete", @post, :confirm => "Are you sure? %>
+    <% end %>
+
+Pill Split Buttons are also easy to do:
+
+    <%= pill_split_button_group do %>
+      <%= primary_add_button_link_to "New Post", @post %>
+      <%= button_link_to "Edit", edit_post_path(@post) %>
+      <%= negative_trash_button_link_to "Delete", @post, :confirm => "Are you sure? %>
     <% end %>
 
 
