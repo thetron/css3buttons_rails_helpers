@@ -469,6 +469,7 @@ http://github.com/necolas/css3-github-buttons
   list-style: none;
   position: absolute;
   right: -9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+  z-index:500;
 }
 
 .split-button-group .split.dropdown .button:hover,
