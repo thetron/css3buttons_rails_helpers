@@ -438,7 +438,7 @@ http://github.com/necolas/css3-github-buttons
 .split-button-group .split.dropdown .button {
   margin-left:-1px;
   float:none;
-  padding:0.5em 0.3em 0.6em;
+  padding:0.5em 0.3em 0.55em;
 
   -webkit-border-top-left-radius:0;
   -webkit-border-bottom-left-radius:0;
@@ -492,4 +492,15 @@ http://github.com/necolas/css3-github-buttons
 
 .split-button-group li:hover ul{
 	right:0; /* Bring back on-screen when needed */
+}
+
+/* ............................................................................................................. Pill */
+
+.pill-group .split.main .button {
+  -webkit-border-top-left-radius:25em;
+  -webkit-border-bottom-left-radius:25em;
+  -moz-border-radius-topleft:25em;
+  -moz-border-radius-bottomleft:25em;
+  border-top-left-radius: 25em;
+  border-bottom-left-radius: 25em;
 }
