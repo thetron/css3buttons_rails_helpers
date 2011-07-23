@@ -239,6 +239,11 @@ http://github.com/necolas/css3-github-buttons
 .button.user.icon:focus:before,
 .button.user.icon:active:before { background-position: -12px -360px; }
 
+.button.dropdown.icon:before { float:right; margin: 0 -0.25em 0 0.5em; background-position: 0 -373px; }
+.button.dropdown.icon:hover:before,
+.button.dropdown.icon:focus:before,
+.button.dropdown.icon:active:before { background-position: -12px -373px; }
+
 
 /* ------------------------------------------------------------------------------------------------------------- BUTTON EXTENSIONS */
 
