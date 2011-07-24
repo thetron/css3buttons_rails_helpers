@@ -4,7 +4,7 @@ include Css3buttons::Helpers::ButtonHelper
 
 describe Css3buttons::Helpers::ButtonHelper do
   before :each do
-    @icons = ["book","calendar","chat","check","clock","cog","comment","cross","downarrow","fork","heart","home","key","leftarrow","lock","loop","magnifier","mail","move","pen","pin","plus","reload","rightarrow","rss","tag","trash","unlock","uparrow","user"]
+    @icons = ["book","calendar","chat","check","clock","cog","comment","cross","downarrow","fork","heart","home","key","leftarrow","lock","loop","magnifier","mail","move","pen","pin","plus","reload","rightarrow","rss","tag","trash","unlock","uparrow","user","dropdown"]
     @qualifiers = ['pill', 'negative', 'positive', 'danger', 'safe']
     @label = "Search this site"
     @path = "/search/site"
