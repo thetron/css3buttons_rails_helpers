@@ -468,8 +468,8 @@ http://github.com/necolas/css3-github-buttons
   width: 90px;
   list-style: none;
   position: absolute;
-  right: -9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
-  z-index:500;
+  right: -99999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+  display:none;
 }
 
 .split-button-group .split.dropdown .button:hover,
@@ -482,7 +482,7 @@ http://github.com/necolas/css3-github-buttons
 
 
 .split-button-group .split-menu .button.icon:before {
-    margin: 0 0.75em 0 0.25em; 
+  margin: 0 0.75em 0 0.25em; 
 }
 
 .split-button-group .split-menu .button {
@@ -496,6 +496,8 @@ http://github.com/necolas/css3-github-buttons
 
 .split-button-group li:hover ul{
 	right:0; /* Bring back on-screen when needed */
+	display:block;
+	z-index:500;
 }
 
 /* ............................................................................................................. Pill */
