@@ -1,6 +1,8 @@
-# css3buttons gem - helper methods for css3buttons
+# css3buttons-rails gem
 
-The css3buttons gem is a small set of helper methods designed to work in
+Integrate Nicholas Bruning's css3buttons_rails_helpers into Rails3.1+ via the asset pipeline.
+
+The css3buttons-rails gem is a small set of helper methods designed to work in
 conjunction with the __amazing__ [css3 github buttons by Nicolas Gallagher](http://nicolasgallagher.com/lab/css3-github-buttons/).
 
 The helpers allow rails developers to quickly and easily leverage this
@@ -25,7 +27,25 @@ __Please note__: as part of changes, calls to `link_button_to` will need
 to be updated to `button_link_to`. Everything else should work expected.
 
 
-# Getting started
+# Getting started (Rails3.1+)
+
+Include the gem in your gemfile and rum *bundle*
+
+    gem 'css3buttons'
+
+Require the assets (stylesheets) in your *app/asstes/stylesheets/application.css*
+
+	*= require css3buttons
+	*= require_self
+	...
+	
+You should require the css3buttons stylesheet before any other styles because it loads a css reset script. If you don't want to load the reset script, just require this instead
+
+	*= require css3buttons/without-reset
+	*= require_self
+	...
+
+# Getting started (< Rails3.1)
 
 Include the gem in your gemfile:
 
