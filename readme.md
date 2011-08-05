@@ -1,7 +1,5 @@
 # css3buttons-rails gem
 
-Integrate Nicholas Bruning's css3buttons_rails_helpers into Rails3.1+ via the asset pipeline.
-
 The css3buttons-rails gem is a small set of helper methods designed to work in
 conjunction with the __amazing__ [css3 github buttons by Nicolas Gallagher](http://nicolasgallagher.com/lab/css3-github-buttons/).
 
@@ -9,45 +7,31 @@ The helpers allow rails developers to quickly and easily leverage this
 fantastic CSS library - without cluttering up your views and calls to
 `link_to`, `button_to` and `submit_tag`.
 
-# What's new in version this version?
+# Version 1.0 is finally here!
 
-## 0.9.5
+And with it brings support for the Rails 3.1 asset pipeline. __Please note:__ as of version 1.0.0, Rails 3.0.x is no longer supported. If you're wanting to use the css3buttons on a Rails 3.0.x project, please install version 0.9.5 (see below for full instructions).
 
-Not a whole lot, mainly just fixes for bad paths in the CSS that crept
-through in the last update. As well as prepping for version 1.0.0 with
-will be compaitible with the Rails 3.1 asset pipeline.
+# Getting started - Rails 3.1
 
-## 0.9.4
-
-In this version we've updated the css to now work with the [css3 github buttons](http://nicolasgallagher.com/lab/css3-github-buttons/) as standard, instead of the original css3buttons, in order to take advantage of a few of the features not included in the original library.
-
-Additionally, there was some serious re-tooling of the helper methods to make them more usable, more dynamic and less prone to error.
-
-__Please note__: as part of changes, calls to `link_button_to` will need
-to be updated to `button_link_to`. Everything else should work expected.
-
-
-# Getting started (Rails3.1+)
-
-Include the gem in your gemfile and rum *bundle*
+Include the gem in your gemfile and run `bundle install`
 
     gem 'css3buttons'
 
-Require the assets (stylesheets) in your *app/asstes/stylesheets/application.css*
+Require the stylesheets in `app/assets/stylesheets/application.css`:
 
 	*= require css3buttons
 	*= require_self
 	...
 	
-You should require the css3buttons stylesheet before any other styles because it loads a css reset script. If you don't want to load the reset script, just require this instead
+By default, css3buttons comes with a reset stylesheet built in. Because of this, you should load it before any other stylesheets. However, if you don't want to use reset, or already have your own, just require this instead:
 
 	*= require css3buttons/without-reset
 	*= require_self
 	...
 
-# Getting started (< Rails3.1)
+# Getting started - Rails 3.0.x
 
-Include the gem in your gemfile:
+Include the gem in your gemfile and run 'bundle install`
 
     gem 'css3buttons'
 
@@ -65,10 +49,7 @@ In your layout, add the following:
 Which will add both the `reset.css` and the `css3buttons.css` stylesheet
 link tags. 
 
-_Please note_ since this helper includes the css3buttons
-reset stylesheet, it's advisable to place this helper before all your
-other stylsheet declarations. However, if you'd like to use your own
-reset, you can skip it with:
+By default, css3buttons comes with a reset stylesheet built in. Because of this, you should load it before any other stylesheets. However, if you'd like to use your own reset, you can skip it with:
 
     <%= css3buttons_stylesheets :include_reset => false %>
 
