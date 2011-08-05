@@ -33,7 +33,7 @@ By default, css3buttons comes with a reset stylesheet built in. Because of this,
 
 Include the gem in your gemfile and run 'bundle install`
 
-    gem 'css3buttons'
+    gem 'css3buttons', '0.9.5'
 
 Run the generators:
 
