@@ -1,6 +1,6 @@
-# css3buttons-rails gem
+# css3buttons
 
-The css3buttons-rails gem is a small set of helper methods designed to work in
+The __css3buttons__ gem is a small set of helper methods designed to work in
 conjunction with the __amazing__ [css3 github buttons by Nicolas Gallagher](http://nicolasgallagher.com/lab/css3-github-buttons/).
 
 The helpers allow rails developers to quickly and easily leverage this
