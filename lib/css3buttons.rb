@@ -2,6 +2,7 @@ require 'action_controller'
 require 'action_view'
 
 module Css3buttons 
+  require 'css3buttons/engine'
   module Helpers
     autoload :ButtonHelper, 'css3buttons/helpers/button_helper'
   end
