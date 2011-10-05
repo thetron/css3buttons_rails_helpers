@@ -81,7 +81,7 @@ http://github.com/necolas/css3-github-buttons
     width: 12px; 
     height: 12px; 
     margin: 0 0.75em 0 -0.25em; 
-    background: url(/images/css3buttons/css3-github-buttons-icons.png) 0 99px no-repeat;
+    background: url(<%= asset_path "css3buttons/icons.png" %>) 0 99px no-repeat;
 }
 
 .button.arrowup.icon:before { background-position: 0 0; }
@@ -281,6 +281,40 @@ http://github.com/necolas/css3-github-buttons
     background-image: -moz-linear-gradient(#b33630, #dc5f59);
     background-image: -o-linear-gradient(#b33630, #dc5f59);
     background-image: linear-gradient(#b33630, #dc5f59);
+}
+
+/* ............................................................................................................. safe */
+
+.button.safe {
+  color: #fff;
+  border-color: #6b9640;
+  border-bottom-color: #747d4a;
+  text-decoration: none; 
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.3); 
+  background-color: #7bac4c;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#aed36c), to(#7bac4c));
+  background-image: -moz-linear-gradient(#aed36c, #7bac4c);
+  background-image: -o-linear-gradient(#aed36c, #7bac4c);
+  background-image: linear-gradient(#aed36c, #7bac4c);
+}
+
+.button.safe:hover,
+.button.safe:focus,
+.button.safe:active {
+  background-color: #a2c581;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bddb89), to(#96bd71));
+  background-image: -moz-linear-gradient(#bddb89, #96bd71);
+  background-image: -o-linear-gradient(#bddb89, #96bd71);
+  background-image: linear-gradient(#bddb89, #96bd71);
+}
+
+.button.safe:active,
+.button.safe.active {
+  background-color: #a2c581;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#96bd71), to(#bddb89));
+  background-image: -moz-linear-gradient(#96bd71, #bddb89);
+  background-image: -o-linear-gradient(#96bd71, #bddb89);
+  background-image: linear-gradient(#96bd71, #bddb89);
 }
 
 /* ............................................................................................................. Pill */

@@ -1,3 +1,0 @@
-To add the latest css3buttons stylsheets and icon images to your rails app, just do the following:
-
-    rails generate css3buttons:assets

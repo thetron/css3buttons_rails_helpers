@@ -1,3 +1,3 @@
 module Css3buttons
-  VERSION = "0.9.6"
+  VERSION = "1.0.2"
 end
