@@ -239,6 +239,11 @@ http://github.com/necolas/css3-github-buttons
 .button.user.icon:focus:before,
 .button.user.icon:active:before { background-position: -12px -360px; }
 
+.button.dropdown.icon:before { float:right; margin: 0 -0.25em 0 0.5em; background-position: 0 -373px; }
+.button.dropdown.icon:hover:before,
+.button.dropdown.icon:focus:before,
+.button.dropdown.icon:active:before { background-position: -12px -373px; }
+
 
 /* ------------------------------------------------------------------------------------------------------------- BUTTON EXTENSIONS */
 
@@ -352,7 +357,9 @@ http://github.com/necolas/css3-github-buttons
 .button + .button,
 .button + .button-group,
 .button-group + .button,
-.button-group + .button-group {
+.button-group + .button-group,
+.split-button-group + .button,
+.split-button-group + .button-group {
     margin-left: 15px;
 }
 
@@ -425,4 +432,126 @@ http://github.com/necolas/css3-github-buttons
 .button-container .button,
 .button-container .button-group {
     vertical-align: top;
+}
+
+/* --------------------------------------------------------------------------------------------------------- SPLIT BUTTON GROUPS */
+
+.split-button-group {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  /* IE hacks */
+  zoom: 1; 
+  *display: inline; 
+}
+
+.split-button-group ul.split-menu-wrap { 
+  margin:0;
+}
+
+.split-button-group .button {
+  float: left;
+  margin-left: -1px; 
+}
+
+.split-button-group .split {
+  display: inline;
+  position:relative;
+}
+
+.split-button-group .split.main .button {
+  -webkit-border-top-right-radius:0;
+  -webkit-border-bottom-right-radius:0;
+  -moz-border-radius-topright:0;
+  -moz-border-radius-bottomright:0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.split-button-group .split.dropdown .button.dropdown.icon:before { margin: 0 0.25em 0; }
+
+.split-button-group .split.dropdown .button {
+  margin-left:-1px;
+  float:none;
+  padding:0.5em 0.3em 0.55em;
+
+  -webkit-border-top-left-radius:0;
+  -webkit-border-bottom-left-radius:0;
+  -moz-border-radius-topleft:0;
+  -moz-border-radius-bottomleft:0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.split-button-group .split.dropdown .button:hover {
+  border-bottom:1px solid #888;
+}
+
+.split-button-group li {
+  list-style:none;
+  padding: 0;
+  margin: 0;
+}
+
+.split-button-group li ul {
+  padding: 0;
+  margin-top:-5px;
+  min-width:78px;
+  max-width:120px;
+  width: 90px;
+  list-style: none;
+  position: absolute;
+  right: -99999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+  display:none;
+}
+
+.split-button-group .split.dropdown .button:hover,
+.split-button-group .split-menu {
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px #888;
+  -khtml-box-shadow:  0 0 5px #888;
+  box-shadow: 0 0 5px #888;
+}
+
+
+.split-button-group .split-menu .button.icon:before {
+  margin: 0 0.75em 0 0.25em; 
+}
+
+.split-button-group .split-menu .button {
+  display: block;
+  border-top: none;
+  padding-left:1.4em;
+  -webkit-border-radius: 0; 
+  -moz-border-radius: 0; 
+  border-radius: 0; 
+}
+
+.split-button-group li:hover ul{
+	right:0; /* Bring back on-screen when needed */
+	display:block;
+	z-index:500;
+}
+
+/* ............................................................................................................. Pill */
+
+.pill-group .split.main .button {
+  -webkit-border-top-left-radius:25em;
+  -webkit-border-bottom-left-radius:25em;
+  -moz-border-radius-topleft:25em;
+  -moz-border-radius-bottomleft:25em;
+  border-top-left-radius: 25em;
+  border-bottom-left-radius: 25em;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- BUTTON CONTAINER */
+/* For mixing buttons and button groups, e.g., in a navigation bar */
+
+.button-container .split-button-group {
+    vertical-align: top;
+}
+
+.button-container .split-button-group li ul {
+  margin-top:0;
 }

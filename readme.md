@@ -118,6 +118,25 @@ And, of course, minor groups:
     <% end %>
 
 
+## Split Buttons (Button groups)
+
+Split Buttons (no javascript!), similar to Button Groups, are extremely easy to create by using a `split_button_group`, like so:
+  
+    <%= split_button_group do %>
+      <%= primary_add_button_link_to "New Post", @post %>
+      <%= button_link_to "Edit", edit_post_path(@post) %>
+      <%= negative_trash_button_link_to "Delete", @post, :confirm => "Are you sure? %>
+    <% end %>
+
+Pill Split Buttons are also easy to do:
+
+    <%= pill_split_button_group do %>
+      <%= primary_add_button_link_to "New Post", @post %>
+      <%= button_link_to "Edit", edit_post_path(@post) %>
+      <%= negative_trash_button_link_to "Delete", @post, :confirm => "Are you sure? %>
+    <% end %>
+
+
 ## Submit tags, button tags and using icons on form buttons
 
 Submit tags were ushered in with version 0.9.2. Everything works as it does above, except instead of `button_link_to` it's `button_submit_tag`. Example:
