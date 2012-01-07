@@ -278,40 +278,6 @@ http://github.com/necolas/css3-github-buttons
     background-image: linear-gradient(#b33630, #dc5f59);
 }
 
-/* ............................................................................................................. safe */
-
-.button.safe {
-  color: #fff;
-  border-color: #6b9640;
-  border-bottom-color: #747d4a;
-  text-decoration: none; 
-  text-shadow: -1px -1px 0 rgba(0,0,0,0.3); 
-  background-color: #7bac4c;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#aed36c), to(#7bac4c));
-  background-image: -moz-linear-gradient(#aed36c, #7bac4c);
-  background-image: -o-linear-gradient(#aed36c, #7bac4c);
-  background-image: linear-gradient(#aed36c, #7bac4c);
-}
-
-.button.safe:hover,
-.button.safe:focus,
-.button.safe:active {
-  background-color: #a2c581;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bddb89), to(#96bd71));
-  background-image: -moz-linear-gradient(#bddb89, #96bd71);
-  background-image: -o-linear-gradient(#bddb89, #96bd71);
-  background-image: linear-gradient(#bddb89, #96bd71);
-}
-
-.button.safe:active,
-.button.safe.active {
-  background-color: #a2c581;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#96bd71), to(#bddb89));
-  background-image: -moz-linear-gradient(#96bd71, #bddb89);
-  background-image: -o-linear-gradient(#96bd71, #bddb89);
-  background-image: linear-gradient(#96bd71, #bddb89);
-}
-
 /* ............................................................................................................. Pill */
 
 .button.pill {
@@ -405,8 +371,7 @@ http://github.com/necolas/css3-github-buttons
 }
 
 .button-group.minor-group .button:hover,
-.button-group.minor-group .button:focus,
-.button-group.minor-group .button:active {
+.button-group.minor-group .button:focus {
     background-color: #599bdc;
 }
 
