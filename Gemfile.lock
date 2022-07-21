@@ -71,7 +71,7 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
-    tzinfo (0.3.25)
+    tzinfo (0.3.61)
     webrat (0.7.2)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
